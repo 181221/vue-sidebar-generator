@@ -1,0 +1,28 @@
+{
+  "name": "vue-sidebar-generator",
+  "version": "1.0.0",
+  "description": "This is a work in progress project I decided to create to simplify the process of creating a vuepress site. Where the user is able publish content without having to update config.js to add the content to the sidebar.",
+  "main": "index.js",
+  "dependencies": {
+    "promise": "^8.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/181221/vue-sidebar-generator.git"
+  },
+  "keywords": [
+    "vuepress",
+    "sidebar",
+    "automatic-sidebar"
+  ],
+  "author": "Peder Aalen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/181221/vue-sidebar-generator/issues"
+  },
+  "homepage": "https://github.com/181221/vue-sidebar-generator#readme"
+}
