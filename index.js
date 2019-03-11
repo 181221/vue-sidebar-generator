@@ -27,9 +27,9 @@ class SidebarUtil {
     return sidebar;
   }
 
-  read_file() {
+  read_file(filename = "README.md") {
     return new Promise(resolve => {
-      let content = fs.readFileSync("README.md", "utf8");
+      let content = fs.readFileSync(filename, "utf8");
       let response = resolve(content);
       return response;
     });
@@ -48,13 +48,14 @@ class SidebarUtil {
 
   autoSidebar() {}
 
-  read_Dir() {
+  read_Dir(path) {
     return new Promise(resolve => {
-      let content = fs.readFileSync("README.md", "utf8");
+      let content = fs.readdirSync(path, "utf8");
       let response = resolve(content);
       return response;
     });
   }
 }
-let sidebar = new SidebarUtil().init();
-console.log(sidebar);
+//let sidebar = new SidebarUtil().init();
+//console.log(sidebar);
+module.exports = new SidebarUtil();
