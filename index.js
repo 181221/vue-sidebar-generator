@@ -46,7 +46,21 @@ class SidebarUtil {
     }
   }
 
-  autoSidebar() {}
+  autoSidebar(path) {
+    let regex = /\w*\.(\w)*|node_modules/g;
+    let dir = this.read_Dir(path)._j;
+    dir = dir
+      .filter(folder => !folder.match(regex))
+      .filter(folder => {
+        if (fs.statSync(path + folder).isDirectory()) {
+          let content = this.read_Dir(path + folder)._j;
+          content = content.filter(element => element.match(/README.md/));
+          if (content) return content;
+        }
+      })
+      .map(el => `/${el}/`);
+    return dir;
+  }
 
   read_Dir(path) {
     return new Promise(resolve => {
@@ -56,6 +70,7 @@ class SidebarUtil {
     });
   }
 }
-//let sidebar = new SidebarUtil().init();
-//console.log(sidebar);
+let sidebar = new SidebarUtil();
+console.log("sidebar", sidebar.init());
+console.log("Automatic", sidebar.autoSidebar("./"));
 module.exports = new SidebarUtil();

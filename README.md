@@ -1,6 +1,6 @@
 ---
 title: "title"
-sidebar: side1, side2, side3
+sidebar: uke1, uke2
 ---
 
 ### About
@@ -11,7 +11,7 @@ in YAML formatter
 
     ---
     title: "title"
-    sidebar: side1, side2, side3
+    sidebar: uke1, uke2
     ---
 
 if sidebar is not specified the fallback would be on automatic detection.
