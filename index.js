@@ -1,5 +1,6 @@
-var fs = require("fs");
-var Promise = require("promise");
+const fs = require("fs");
+const Promise = require("promise");
+
 class SidebarUtil {
   constructor() {
     this.regex = /sidebar:\s(\w*)/;
@@ -43,6 +44,16 @@ class SidebarUtil {
     } else {
       return this.parseContent(content);
     }
+  }
+
+  autoSidebar() {}
+
+  read_Dir() {
+    return new Promise(resolve => {
+      let content = fs.readFileSync("README.md", "utf8");
+      let response = resolve(content);
+      return response;
+    });
   }
 }
 let sidebar = new SidebarUtil().init();
