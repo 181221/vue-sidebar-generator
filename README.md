@@ -4,11 +4,13 @@ This package reads folders in your workdir with a README.md file and appends it 
 
 ### Getting started
 
-    npm i vuepress-sidebare-generator
+    npm i vue-sidebar-generator
+    or
+    yarn add vue-sidebar-generator
 
 In config.js
-  
- let Sidebar = require("vuepress-sidebare-generator")
+
+let Sidebar = require("vue-sidebar-generator")
 
     const init = () => {
         let sidebar = Sidebar.autoSidebar(); // default path is "./"
