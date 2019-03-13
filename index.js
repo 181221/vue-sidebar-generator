@@ -43,7 +43,7 @@ class SidebarUtil {
     }
   }
 
-  autoSidebar(path) {
+  autoSidebar(path='./') {
     let regex = /\w*\.(\w)*|node_modules/g;
     let dir = this.read_Dir(path)._j;
     dir = dir
