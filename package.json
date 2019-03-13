@@ -1,6 +1,6 @@
 {
   "name": "vue-sidebar-generator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This is a work in progress project I decided to create to simplify the process of creating a vuepress site. Where the user is able publish content without having to update config.js to add the content to the sidebar.",
   "main": "index.js",
   "dependencies": {

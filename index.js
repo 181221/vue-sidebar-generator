@@ -43,7 +43,7 @@ class SidebarUtil {
     }
   }
 
-  autoSidebar(path='./') {
+  autoSidebar(path = "./") {
     let regex = /\w*\.(\w)*|node_modules/g;
     let dir = this.read_Dir(path)._j;
     dir = dir
@@ -56,6 +56,12 @@ class SidebarUtil {
         }
       })
       .map(el => `/${el}/`);
+    return dir;
+  }
+
+  folderToSidebar(path) {
+    let dir = this.read_Dir(path)._j;
+    dir = dir.filter(folder => folder.match(/w*.md/)).map(el => `/${el}/`);
     return dir;
   }
 

@@ -25,6 +25,13 @@ In config.js
     }
     module.exports = init();
 
+### support for folders - netlify
+
+    const path = "./docs"
+    const sidebar = Sidebar.folderToSidebar(path)
+
+this will read all the markdown files in that folder and append to sidebar.
+
 ### read sidebar from YAML front matter in README.md
 
 there is also an option to select which items to have in your sidebar.
