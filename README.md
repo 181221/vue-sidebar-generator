@@ -27,11 +27,9 @@ In config.js
 
 ### support for folders - netlify
 
-    const path = "./docs"
-    const sidebar = Sidebar.folderToSidebar(path)
-
     const init = () => {
-        let sidebar = Sidebar.autoSidebar(); // default path is "./"
+        const path = "./docs"
+        const sidebar = Sidebar.folderToSidebar(path)
 
         return {
             // rest of config options
