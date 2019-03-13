@@ -59,11 +59,12 @@ class SidebarUtil {
     return dir;
   }
 
-  folderToSidebar(path) {
+  folderToSidebar(path, foldername = null) {
     let dir = this.read_Dir(path)._j;
+    if (!foldername) foldername = path.replace(/\.\.\/|\.\/|\//, "");
     dir = dir
       .filter(folder => folder.match(/w*.md/))
-      .map(el => `/${el.replace(".md", "")}/`);
+      .map(el => `/${foldername}/${el.replace(".md", "")}/`);
     return dir;
   }
 
@@ -75,4 +76,8 @@ class SidebarUtil {
     });
   }
 }
+const path = "./docs";
+const Sidebar = new SidebarUtil();
+let bar = Sidebar.folderToSidebar(path);
+console.log("bar", bar);
 module.exports = new SidebarUtil();
