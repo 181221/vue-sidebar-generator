@@ -10,7 +10,7 @@ This package reads folders in your workdir with a README.md file and appends it 
 
 In config.js
 
-let Sidebar = require("vue-sidebar-generator")
+    let Sidebar = require("vue-sidebar-generator")
 
     const init = () => {
         let sidebar = Sidebar.autoSidebar(); // default path is "./"
