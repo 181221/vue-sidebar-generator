@@ -30,6 +30,23 @@ In config.js
     const path = "./docs"
     const sidebar = Sidebar.folderToSidebar(path)
 
+    const init = () => {
+        let sidebar = Sidebar.autoSidebar(); // default path is "./"
+
+        return {
+            // rest of config options
+            sidebar: [
+              {
+                title: "",
+                collapsable: false,
+                children: sidebar
+              }
+            ],
+            //config options
+        }
+    }
+    module.exports = init();
+
 this will read all the markdown files in that folder and append to sidebar.
 
 ### read sidebar from YAML front matter in README.md

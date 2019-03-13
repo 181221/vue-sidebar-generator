@@ -64,7 +64,7 @@ class SidebarUtil {
     if (!foldername) foldername = path.replace(/\.\.\/|\.\/|\//, "");
     dir = dir
       .filter(folder => folder.match(/w*.md/))
-      .map(el => `/${foldername}/${el.replace(".md", "")}/`);
+      .map(el => `/${foldername}/${el}`);
     return dir;
   }
 
@@ -76,8 +76,4 @@ class SidebarUtil {
     });
   }
 }
-const path = "./docs";
-const Sidebar = new SidebarUtil();
-let bar = Sidebar.folderToSidebar(path);
-console.log("bar", bar);
 module.exports = new SidebarUtil();
