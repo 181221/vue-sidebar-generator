@@ -1,17 +1,33 @@
----
-title: "title"
-sidebar: uke1, uke2
----
+### Vuepress sidebar generator
 
-### About
+This package reads folders in your workdir with a README.md file and appends it to your sidebar
 
-My initial thoughs were that the user should be able to choose if sidebar should be automatic detected or typed in initial README.md for the vuepress project.
+### Getting started
 
-in YAML formatter
+    npm i vuepress-sidebare-generator
 
-    ---
-    title: "title"
-    sidebar: uke1, uke2
-    ---
+In config.js
 
-if sidebar is not specified the fallback would be on automatic detection.
+    const init = () => {
+        let sidebare = getAutomatic();
+        return {
+            // rest of config options
+            sidebar: {
+                "/": sidebar
+            },
+            //config options
+        }
+    }
+    module.exports = init();
+
+there is also an option to select which items to have in your sidebar.
+You can specify in README.md for workdir
+
+\---\
+title: title\
+sidebar: sideItem1, sideItem2, sideItem3\
+\---
+
+then in config.js
+  
+ let sidebar = getSidebar();

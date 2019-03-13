@@ -5,9 +5,6 @@ class SidebarUtil {
   constructor() {
     this.regex = /sidebar:\s(\w*)/;
   }
-  init() {
-    return this.getSidebar();
-  }
 
   parseContent(content) {
     let data = content.split(/\n/);
@@ -70,7 +67,4 @@ class SidebarUtil {
     });
   }
 }
-let sidebar = new SidebarUtil();
-console.log("sidebar", sidebar.init());
-console.log("Automatic", sidebar.autoSidebar("./"));
 module.exports = new SidebarUtil();
