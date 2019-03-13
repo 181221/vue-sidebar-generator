@@ -61,7 +61,9 @@ class SidebarUtil {
 
   folderToSidebar(path) {
     let dir = this.read_Dir(path)._j;
-    dir = dir.filter(folder => folder.match(/w*.md/)).map(el => `/${el}/`);
+    dir = dir
+      .filter(folder => folder.match(/w*.md/))
+      .map(el => `/${el.replace(".md", "")}/`);
     return dir;
   }
 
